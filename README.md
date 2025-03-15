@@ -6,6 +6,6 @@
 
 ## Setting up
 
-1. After cloning the repo, run `git lfs pull` to make sure files are pulled.
+1. After cloning the repo, run `git lfs pull` to make sure csv files are pulled.
 
-2. Run `pip install requirements.txt` to download all libraries used.
+2. Run `pip install -r requirements.txt` to download all libraries used.
