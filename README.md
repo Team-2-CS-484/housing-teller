@@ -20,7 +20,6 @@ This repository contains all code, notebooks, and data for Team 2’s housing pr
 - Git (to clone repository)
 
 ## Requirements
-All Python dependencies are listed in `requirements.txt`, including:
 - pandas
 - numpy
 - scikit-learn
@@ -28,19 +27,15 @@ All Python dependencies are listed in `requirements.txt`, including:
 - Flask
 - joblib
 - matplotlib
+- lightgbm
+- hyperopt
+- seaborn
+- requests
 
 ## Setup
 1. **Clone the repo**:
-   `
-   git clone https://github.com/your-org/housing-price-prediction.git
-   cd housing-price-prediction
-   `
+  
 2. **Install dependencies**:
-   `
-   python3 -m venv venv
-   source venv/bin/activate      # On Windows: venv\\Scripts\\activate
-   pip install -r requirements.txt
-   `
 
 ## Data
 
