@@ -33,9 +33,9 @@ This repository contains all code, notebooks, and data for Team 2’s housing pr
 - requests
 
 ## Setup
-1. **Clone the repo**:
+1. **Clone the repo**
   
-2. **Install dependencies**:
+2. **Install dependencies**
 
 ## Data
 
