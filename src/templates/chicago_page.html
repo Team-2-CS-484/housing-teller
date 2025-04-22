@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Housing Price</title>
+    <style>
+        body {
+            background-image: url('../static/iStock-1216459382(2).jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 30px;
+            border-radius: 10px;
+            display: inline-block;
+            max-width: 600px;
+        }
+        input[type=number] {
+            padding: 10px;
+            margin: 10px;
+            width: 90%;
+            border-radius: 5px;
+            border: none;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #a88bff;
+            color: black;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #c0aaff;
+        }
+        .team {
+            margin-top: 30px;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        h2 {
+            margin-bottom: 30px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Chicago Housing Price Prediction</h2>
+
+        <form action="/chicago" method="post">
+            <select name="Residence Type" id="residence_type" required>
+                <option value="" disabled selected>Select residence type</option>
+                <option value="1">One story</option>
+                <option value="2">Two-story</option>
+                <option value="3">Three-story or higher</option>
+                <option value="4">Other</option>
+            </select><br>
+            <input type="number" step="any" name="Land Square Feet" placeholder="Land Square Feet" required><br>
+            <input type="number" step="any" name="Building Square Feet" placeholder="Building Square Feet" required><br>
+            <input type="number" step="any" name="Rooms" placeholder="Total number of rooms" required><br>
+            <input type="number" step="any" name="Bedrooms" placeholder="Number of bedrooms" required><br>
+            <input type="number" step="any" name="Full Baths" placeholder="Number of full bathrooms (having a bath or shower)" required><br>
+            <input type="number" step="any" name="Age" placeholder="Age of the property" required><br>
+            <input type="number" step="any" name="Total Garage Size" placeholder="Total Garage Size" required><br>
+            <input type="number" step="any" name="lat" placeholder="Latitude of property" required><br>
+            <input type="number" step="any" name="lon" placeholder="Longitude of propert" required><br>
+            <button class="btn" type="submit">Predict Price</button>
+        </form>
+
+        {% if prediction is not none %}
+        <div class="result">
+            Predicted Price: ${{ prediction }}
+        </div>
+        {% endif %}
+
+        <div class="team">
+            <strong>Team Members:</strong><br>
+            Ben Francis, Hamza Bu Obaid<br>
+            Matt Watson, Oluwafisayo Okunuga<br>
+            Wikrama Wardhana
+        </div>
+    </div>
+</body>
+</html>

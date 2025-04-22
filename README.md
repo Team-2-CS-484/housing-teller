@@ -66,27 +66,30 @@ This script will:
 - Save the trained model as `xgb_boston_model.pkl`
 - Display a feature importance plot
 
+### chicago_model.py
+Trains a LightGBM regressor on the Chicago dataset:
+`
+python chicago_model.py
+`
+This script will:
+- Load `chicago_data_final.csv`
+- Train-test split and model fitting
+- Output MSE and R² scores
+- Save the trained model as `lgbm_chicago_model.pkl`
+
 ### app.py
 Runs a Flask web app for interactive predictions:
 `
 python app.py
 `
-- The app loads `xgb_boston_model.pkl`
+- The app loads `xgb_boston_model.pkl` and `lgbm_chicago_model.pkl`
 - Accepts input features via a web form
 - Displays predicted sale price
 - Default route: http://localhost:5000/
-
-### main.py
-A placeholder entry script. Currently prints a message:
-`
-python main.py
-`
+- Chicago model route: http://localhost:5000/chicago
 
 ## Running the Application
-1. Train or load the Boston model:
-   `
-   python Boston_model.py
-   `
+1. Make sure `xgb_boston_model.pkl` and `lgbm_chicago_model.pkl` is on the same folder of `app.py`, otherwise use scripts to generate
 2. Start the Flask server:
    `
    python app.py

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Housing Price</title>
+    <style>
+        body {
+            background-image: url('../static/iStock-1216459382(2).jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 30px;
+            border-radius: 10px;
+            display: inline-block;
+            max-width: 600px;
+        }
+        input[type=number] {
+            padding: 10px;
+            margin: 10px;
+            width: 90%;
+            border-radius: 5px;
+            border: none;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #a88bff;
+            color: black;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #c0aaff;
+        }
+        .team {
+            margin-top: 30px;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        h2 {
+            margin-bottom: 30px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Boston Housing Price Prediction</h2>
+
+        <form action="/" method="post">
+            <input type="number" step="any" name="lstat" placeholder="LSTAT - % lower status of the population" required><br>
+            <input type="number" step="any" name="rm" placeholder="RM - Average number of rooms per dwelling" required><br>
+            <input type="number" step="any" name="ptratio" placeholder="PTRATIO - Pupil-teacher ratio by town" required><br>
+            <input type="number" step="any" name="indus" placeholder="INDUS - Non-retail business acres per town" required><br>
+            <input type="number" step="any" name="tax" placeholder="TAX - Property-tax rate per $10,000" required><br>
+            <input type="number" step="any" name="nox" placeholder="NOX - Nitric oxides concentration (parts per 10 million)" required><br>
+            <input type="number" step="any" name="crim" placeholder="CRIM - Per capita crime rate by town" required><br>
+            <button class="btn" type="submit">Predict Price</button>
+        </form>
+
+        {% if prediction is not none %}
+        <div class="result">
+            Predicted Price: ${{ prediction }}K
+        </div>
+        {% endif %}
+
+        <div class="team">
+            <strong>Team Members:</strong><br>
+            Ben Francis, Hamza Bu Obaid<br>
+            Matt Watson, Oluwafisayo Okunuga<br>
+            Wikrama Wardhana
+        </div>
+    </div>
+</body>
+</html>
